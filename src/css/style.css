@@ -1,0 +1,243 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(132, 132, 247);
+}
+
+footer {
+   text-align: center;
+}
+
+header {
+   display: flex;
+   margin: 0px;
+   width: 100%;
+   height: auto;
+   flex-direction: column;
+}
+
+#header-elements {
+   display: flex;
+   background-color: rgb(89, 89, 167);
+   width: 100%;
+   flex-direction: row;
+   padding: 0rem 3rem 0rem 3rem;
+   margin: 0px;
+
+   #score {
+      text-align: left;
+      width: 80%;
+   }
+
+   #settings-button {
+      width: 10%;
+      height: auto;
+      flex-grow: 1;
+      font-size: 2.5rem;
+      background-color: transparent;
+      border: none;
+      transition: all 0.2s ease-in-out;
+   }
+
+   #settings-button:hover {
+      transform: scale(1.1);
+
+   }
+}
+
+#game-settings {
+   width: 30%;
+   flex-direction: column;
+   background-color: white;
+   align-self: flex-end;
+   position: absolute;
+   margin-top: 4.5rem;
+   padding: 0.5rem;
+   font-size: 1.5rem;
+
+   fieldset {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+
+      label {
+      padding-bottom: 0.5rem;
+      }
+   }
+}
+
+#save-settings {
+   margin: 0.5rem;
+   width: 75%;
+   height: 3rem;
+   align-self: center;
+}
+
+#settings-error {
+   text-align: center;
+   color: red;
+}
+
+
+main {
+   padding: 1rem;
+
+   @media screen and (min-width: 1000px) {
+      padding: 5rem;
+   }
+}
+
+#start-game {
+   width: 20rem;
+   height: 7.5rem;
+   background-color: rgb(132, 34, 161);
+   margin: 4.5rem;
+}
+ 
+ #game-display {
+    justify-items: center;
+    grid-template-areas: 
+      "questionNum questionNum"
+      "first-card first-card"
+      "second-card second-card"
+      "first-button second-button"
+      "next next";
+
+   @media screen and (min-width: 1000px) {
+      grid-template-areas: 
+         "questionNum questionNum"
+         "first-card second-card"
+         "first-button second-button"
+         "next next";
+   }
+
+   h2 {
+      grid-area: questionNum;
+   }
+
+   button {
+      font-size: 1.25rem;
+      width: 55%;
+      padding: 1rem;
+   }
+ }
+
+ @keyframes slide-in-from-right {
+    from {
+        translate: 125% 0;
+    }
+
+    to {
+        translate: 0 0;
+    }
+}
+
+ @keyframes slide-in-from-left {
+    from {
+        translate: -125% 0;
+    }
+
+    to {
+        translate: 0 0;
+    }
+}
+
+.slide-from-left {
+   animation-name: slide-in-from-left;
+   animation-duration: 1s;
+}
+
+.slide-from-right {
+   animation-name: slide-in-from-right;
+   animation-duration: 1s;
+}
+
+ #first-card {
+    grid-area: first-card;
+ }
+
+  #second-card {
+    grid-area: second-card;
+ }
+
+#first-button {
+    justify-self: right;
+    grid-area: first-button;
+}
+
+#second-button {
+    justify-self: left;
+    grid-area: second-button;
+}
+
+ #next-cards-button {
+    grid-area: next;
+ }
+
+ .card-display img {
+   justify-self: center;
+    width: 397px;
+    height: auto;
+ }
+
+ .card-display {
+    margin: 1rem;
+ }
+
+ .pre-game {
+   display: flex;
+   align-items: center;
+   justify-items: center;
+   flex-direction: column;
+ }
+
+ .card-price {
+   text-align: center;
+   width: 30%;
+   border-radius: 3px;
+   padding: 0.5rem;
+   margin-left: 140px;
+ }
+
+ #result-dialog {
+   width: 40%;
+   text-align: center;
+   font-size: 1.5rem;
+
+   @media screen and (min-width: 1000px) {
+      width: 20%;
+   }
+   
+      button {
+         font-size: 1rem;
+         width: 50%;
+         height: auto;
+         padding: 0.5rem;
+      }
+ }
+
+ .grid-display {
+    display: grid;
+ }
+
+ .flex-display {
+   display: flex;
+ }
+ 
+ .hide {
+    display: none;
+ }
+
+ .show {
+   display: grid;
+ }
+
+ .correct {
+    background-color: rgb(115, 241, 115);
+ }
+
+ .incorrect {
+    background-color:rgb(252, 74, 74);
+ }

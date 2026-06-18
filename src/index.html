@@ -4,10 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
 
     <script src="./js/main.js" type="module"></script>
 </head>
 <body>
-    
+    <header id="main-header">
+        <section id="header-elements">
+            <h2 id="score">Best Score: -</h2>
+            <button id="settings-button">⚙️</button>
+        </section>
+        <section id="game-settings" class="flex-display hide">
+            <fieldset>
+                    <legend>Game Mode</legend>
+                    <label><input type="radio" id="standard" name="game-mode" value="standard" autocomplete="off">Standard</label>
+                    <label><input type="radio" id="endless" name="game-mode" value="endless" autocomplete="off">Endless</label>
+            </fieldset>
+            <fieldset>
+                <label><input type="checkbox" id="cross-game" name="cross-game" value="cross-game" autocomplete="off">Cross-Game Comparisons</label>
+            </fieldset>
+            <fieldset>
+                <legend>Filters</legend>
+                <label><input type="checkbox" id="monsters" name="monsters" value="monsters" autocomplete="off">Monsters Only</label>
+            </fieldset>
+            <button id="save-settings">Save Settings</button>
+            <p id="settings-error"></p>
+        </section>
+    </header>
+
+    <main>
+        <section id="game-display" class="grid-display hide">
+            <h2 id="question-number" class="hide"></h2>
+            <div id="first-card" class="card-display"></div>
+            <div id="second-card" class="card-display"></div>
+            <button id="first-card-button" class="answer-button">First Card</button>
+            <button id="second-card-button" class="answer-button">Second Card</button>
+            <button id="next-cards-button" class="hide">Next Set of Cards</button>
+
+            <dialog id="result-dialog">
+                <p id="result-text"></p>
+                <p id="final-result"></p>
+                <button id="close-dialog">Close</button>
+            </dialog>
+        </section>
+        <section id="pre-game" class="pre-game">
+            <h2 id="pre-game-head">Which card costs more? Start the game and test your knowledge!</h2>
+            <button id="start-game">Start New Game</button>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <p>Pokemon and Yu-Gi-Oh! are owned by their respective copyright holders.</p>
+    </footer>
 </body>
 </html>
