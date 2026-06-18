@@ -4,6 +4,7 @@
 
 body {
     background-color: rgb(132, 132, 247);
+    font-family: "Source Serif 4", serif;
 }
 
 footer {
@@ -92,8 +93,9 @@ main {
 #start-game {
    width: 20rem;
    height: 7.5rem;
-   background-color: rgb(132, 34, 161);
+   background-color: rgb(199, 52, 243);
    margin: 4.5rem;
+   font-size: 1.5rem;
 }
  
  #game-display {
